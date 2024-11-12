@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 41623bc3e0ff7d3408534077d43de6d3
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - fuckPrefuck: {fileID: 1455718659814362, guid: bf43fe3ed09cec246b4f2f367f9817fa,
+      type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
