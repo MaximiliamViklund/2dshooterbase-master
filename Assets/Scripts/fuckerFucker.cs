@@ -5,11 +5,8 @@ using UnityEngine;
 using UnityEngine.UIElements;
 
 public class fuckerFucker : MonoBehaviour{
-    [SerializeField]
-    float speed=0.5f;
-
-    [SerializeField]
-    GameObject explosionPrefuck;
+    [SerializeField] public float speed=0.5f;
+    [SerializeField] public GameObject explosionPrefuck;
     
     void Start(){
         Vector2 pos=new();
@@ -19,7 +16,7 @@ public class fuckerFucker : MonoBehaviour{
     }
 
     // Update is called once per frame
-    void Update(){
+    public virtual void Update(){
         Vector2 move=Vector2.down;
 
         move.x=Mathf.Sin(transform.position.y);

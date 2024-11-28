@@ -5,7 +5,6 @@ using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 using TMPro;
 
 
@@ -65,7 +64,7 @@ public class ShipController : MonoBehaviour
 
         timeSinceLastShot += Time.deltaTime;
 
-        if (Input.GetAxisRaw("Fire1") > 0 && timeSinceLastShot >= timeBetweenShots)
+        if (Input.GetAxisRaw("Fire3") > 0 && timeSinceLastShot >= timeBetweenShots)
         {
             timeSinceLastShot = 0;
             Instantiate(boltPrefuck, gunPos.position, Quaternion.identity);
