@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using JetBrains.Annotations;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -24,13 +25,16 @@ public class fuckerFucker : MonoBehaviour{
 
         if(transform.position.y< -Camera.main.orthographicSize-1){
             Destroy(this.gameObject);
+            GameObject.FindGameObjectWithTag("Player").GetComponent<ShipController>().TakeHp();
         }
         
     }
 
     private void OnTriggerEnter2D(Collider2D other){
-        Instantiate(explosionPrefuck,transform.position, Quaternion.identity);
-        Destroy(this.gameObject);
+        if(other.tag=="Bolt"||other.tag=="Player"){
+            Instantiate(explosionPrefuck,transform.position, Quaternion.identity);
+            Destroy(this.gameObject);
+        }
 
         GameObject player=GameObject.FindGameObjectWithTag("Player");
         ShipController controller=player.GetComponent<ShipController>();

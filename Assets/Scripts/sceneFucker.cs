@@ -18,4 +18,12 @@ public class sceneFucker : MonoBehaviour
     public void ChangeScene(int n){
         SceneManager.LoadScene(n);
     }
+
+    public void Restart(){
+        ShipController.points=0;
+    }
+
+    public void QuitGame(){
+        Application.Quit();
+    }
 }

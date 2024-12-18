@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 72132400}
   - component: {fileID: 72132399}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: FuckerSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -154,8 +154,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fuckPrefuck: {fileID: 1455718659814362, guid: bf43fe3ed09cec246b4f2f367f9817fa,
     type: 3}
+  miniPrefuck: {fileID: 1455718659814362, guid: c88eacf6dfd62984893f23d418701251,
+    type: 3}
+  enemyBolt: {fileID: 1287502262990996, guid: 5b7f9b31d62b8954a87be4875a75033b, type: 3}
   spawnPos: {fileID: 72132400}
-  timeBetweenSpawns: 0.5
+  timeBetweenSpawns: 0.75
+  spawnBolts: 50
 --- !u!4 &72132400
 Transform:
   m_ObjectHideFlags: 0

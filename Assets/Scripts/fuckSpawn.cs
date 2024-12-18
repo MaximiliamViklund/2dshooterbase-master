@@ -5,11 +5,14 @@ using UnityEngine;
 public class fuckSpawn : MonoBehaviour{
     [SerializeField]GameObject fuckPrefuck;
     [SerializeField] GameObject miniPrefuck;
+    [SerializeField] GameObject enemyBolt;
     [SerializeField] Transform spawnPos;
     [SerializeField] float timeBetweenSpawns=0.5f;
+    [SerializeField] int spawnBolts;
 
 
     float timeSinceLastSpawn=0;
+    float timeSinceLastEnemyShot=0;
     bool basicFuck=true;
     bool miniFuck=false;
 
@@ -22,6 +25,7 @@ public class fuckSpawn : MonoBehaviour{
     // Update is called once per frame
     void Update(){
         timeSinceLastSpawn+=Time.deltaTime;
+        timeSinceLastEnemyShot+=Time.deltaTime;
         
         if(timeSinceLastSpawn>=timeBetweenSpawns){
             if(basicFuck){
@@ -36,6 +40,11 @@ public class fuckSpawn : MonoBehaviour{
                 basicFuck=true;
                 miniFuck=false;
             }
+        }
+
+        if(ShipController.points>=spawnBolts&&timeSinceLastEnemyShot>=timeBetweenSpawns){
+            Instantiate(enemyBolt,spawnPos.position,Quaternion.identity);
+            timeSinceLastEnemyShot=0;
         }
     }
 }

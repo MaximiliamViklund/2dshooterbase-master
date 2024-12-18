@@ -25,7 +25,7 @@ public class ShipController : MonoBehaviour
 
     [SerializeField]
     int maxHealth;
-    int currentHealth;
+    public int currentHealth;
 
     [SerializeField]
     Slider hpBar;
@@ -73,19 +73,22 @@ public class ShipController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag == "Fucker")
-        {
-            currentHealth--;
-            hpBar.value = currentHealth;
-            if (currentHealth == 0)
-            {
-                print("GAYMOVER");
-                SceneManager.LoadScene(2);
-            }
+        if (other.gameObject.tag == "Fucker"){
+            TakeHp();
         }
     }
     public void AddPoints(int amount){
         points+=amount;
         pointsText.text="Score: "+points.ToString();
+    }
+
+    public void TakeHp(){
+        currentHealth--;
+        hpBar.value=currentHealth;
+        
+        if (currentHealth == 0){
+            print("GAYMOVER");
+            SceneManager.LoadScene(2);
+        }
     }
 }
